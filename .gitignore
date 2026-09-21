@@ -3,3 +3,23 @@
 *.pyc
 *.json
 *.zip
+*.npy
+
+# ---------------------------------------------------------------------------
+# 数据集 / 预训练权重 / 训练产物：不入库，只保留目录结构与下载脚本
+# 这些内容都可以由 cs231n/datasets/get_*.sh 或 notebook 自动重新下载/生成
+# ---------------------------------------------------------------------------
+
+# 各次作业的 cs231n/datasets/：忽略其中所有下载到的数据，但保留 get_*.sh
+# （忽略 datasets/* 而不是 datasets/，这样 datasets/ 目录本身仍留在仓库里）
+assignments/**/datasets/*
+!assignments/**/datasets/*.sh
+
+# torchvision / 下载脚本在作业目录下生成的 CIFAR-10 缓存与压缩包
+assignments/**/data/
+*.tar.gz
+
+# 预训练权重与训练输出
+assignments/**/pretrained_model/
+assignments/**/cs231n/exp/pretrained/
+assignments/**/results/
